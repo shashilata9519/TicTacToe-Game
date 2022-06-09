@@ -201,3 +201,16 @@ body{
     transition: all 0.3s ease;
     border-radius: 5px;
 }
+footer{
+    margin-bottom: 0;
+    padding-bottom: 0;
+    position: absolute;
+    top: 90%;
+    width: 100%;
+}
+footer h2{
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    text-shadow: 3px 4px black;
+}
