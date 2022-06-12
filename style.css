@@ -242,21 +242,13 @@ footer h2{
     visibility: visible;
 
 }
-/* #my-canvas.active{
-    visibility: visible;
 
-} */
 .text{
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
-    /* color: white; */
     padding-top: 20px;
-    /* font-family: 'Fascinate', cursive; */
-    /* font-family: 'Eater', cursive; */
-    /* text-shadow: -18px -18px 2px #777; */
     font-family: 'Baloo Tamma', cursive;
-    /* color: rgb(9, 237, 222); */
     color: #ffa500;
     letter-spacing: 0.2rem;
     text-shadow: -2px -2px 0px white,
