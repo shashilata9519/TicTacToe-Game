@@ -7,7 +7,19 @@ let selectBox=document.querySelector('.select-box'),
  players=document.querySelector('.players'),
  resultBox=document.querySelector('.result-box'),
  wonText=resultBox.querySelector('.won-text'),
- replayBtn=resultBox.querySelector('Button');
+ replayBtn=resultBox.querySelector('Button'),
+ confe=resultBox.querySelector('#my-canvas');
+
+ const clickSound=new Audio();
+ const click2=new Audio();
+ const end=new Audio();
+
+ clickSound.src='./click.wav';
+ click2.src='./startOne.mp3';
+ end.src='./end.mp3';
+
+    // clickSound=loadSound('.sound/click.wav');
+ 
 
  
 
@@ -20,24 +32,29 @@ let selectBox=document.querySelector('.select-box'),
     
 
      selectXBtn.onclick=()=>{
+        click2.play();
          selectBox.classList.add('hide'); //hide the select box on clicking playerX button 
          playBoard.classList.add('show'); // show the playboard section on clicking player button
      }
      selectOBtn.onclick=()=>{
+        click2.play();
         selectBox.classList.add('hide'); //hide the select box on clicking playerO button
         playBoard.classList.add('show'); // show the playboard section
         players.setAttribute('class','players active player');
 
      }
 
-
- }
+    }
  let playerXIcon='fa-solid fa-xmark';
  let playerOIcon='fa-solid fa-o';
  let playerSign='X';
  let runBot=true;
+ let confettiSettings = { target: 'my-canvas' };
+let confetti = new ConfettiGenerator(confettiSettings);
+           
 
  function clickedBox(element){
+     clickSound.play();
     //  console.log(element)
     if(players.classList.contains('player')){
         element.innerHTML=`<i class='${playerOIcon}'></i>` //adding circle icons while clicking 
@@ -126,10 +143,14 @@ let selectBox=document.querySelector('.select-box'),
         //once the match won by someone the stop the bot
         runBot=false;
         bot(runBot);
+
         //delay to show the result box
         setTimeout(()=>{
+            end.play();
             playBoard.classList.remove('show');
             resultBox.classList.add('show');
+            // confe.classList.add('active');
+            confetti.render();
 
         },700)
         wonText.innerHTML=`Player <p> 🏆 ${playerSign}</p> won the game! `

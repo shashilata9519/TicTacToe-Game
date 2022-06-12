@@ -1,10 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Blaka&family=Fascinate&display=swap');
 body{
-    background-color: #800080;
-    background-color: #ffa500;
+    /* background-color: #800080; */
+    /* background-color: #ffa500; */
+
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+.main
+{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, #33ccff 0%, #ffffff 100%);
+
+}
+
 .select-box , .play-board ,.result-box{
     position: absolute;
     top: 50%;
@@ -14,12 +24,14 @@ body{
 
 }
 
+
 .select-box{
     background-color: white;
-    padding: 20px 25px 25px;
+    /* background: linear-gradient(to bottom, #33ccff 0%, #ffffff 100%); */
+    padding: 40px;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    max-width: 330px;
+    max-width: 450px;
     width: 100%;
 }
 .select-box.hide{
@@ -29,14 +41,14 @@ body{
 
 }
 .select-box header{
-    font-size: 23px;
-    font-weight: 600;
-    padding-bottom: 10px;
+    font-size: 30px;
+    font-weight: 700;
+    padding-bottom: 15px;
     border-bottom: 1px solid gray;
 }
 
 .select-box .title{
-    font-size: 18px;
+    font-size: 25px;
     font-weight: 500;
     margin: 20px 0;
 }
@@ -60,13 +72,13 @@ body{
     transform: scale(0.9);
 }
 .result-box .btn1 button:hover{
-    transform: scale(0.9);
+    transform: scale(1.2);
 }
 .options .playerX{
-    margin-right: 5px;
+    margin-right: 7px;
 }
 .options .playerO{
-    margin-left: 5px;
+    margin-left: 7px;
 }
 
 .play-board .details{
@@ -97,9 +109,7 @@ body{
 .details span:first-child{
     color: white;
 }
-/* .details span:nth-child(2){
-    color: white;
-} */
+
 .details .slider{
     position: absolute;
     top: 0;
@@ -155,11 +165,16 @@ body{
 
 
 }
+.play-board section span:hover{
+    background-color: rgba(0, 0, 0, 0.393);
+}
 .result-box{
     background-color: white;
-    padding: 20px;
+    /* background: linear-gradient(to bottom, #33ccff 0%, #ffffff 100%); */
+    
+    padding: 25px;
     border-radius: 5px;
-    max-width:350px ;
+    max-width:400px ;
     width: 100%;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     opacity: 0;
@@ -174,15 +189,18 @@ body{
 
 }
 .result-box .won-text{
-    font-size: 25px;
-    font-weight: 500;
-    display: flex;
-    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color:#0df40d;
+    /* display: flex;
+    justify-content: center; */
 
 }
 .result-box .won-text p{
     font-weight: 700;
     margin: 0px 3px;
+    color: #ffa500;
 }
 .result-box .btn1{
     display: flex;
@@ -210,7 +228,38 @@ footer{
 }
 footer h2{
     text-align: center;
-    font-size: 2rem;
-    color: white;
-    text-shadow: 3px 4px black;
+    font-size: 1.5rem;
+    color: black;
+    text-shadow: 3px 4px rgb(19, 236, 244);
+}
+#my-canvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40vh;
+    z-index: 100000;
+    visibility: visible;
+
+}
+/* #my-canvas.active{
+    visibility: visible;
+
+} */
+.text{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    /* color: white; */
+    padding-top: 20px;
+    /* font-family: 'Fascinate', cursive; */
+    /* font-family: 'Eater', cursive; */
+    /* text-shadow: -18px -18px 2px #777; */
+    font-family: 'Baloo Tamma', cursive;
+    /* color: rgb(9, 237, 222); */
+    color: #ffa500;
+    letter-spacing: 0.2rem;
+    text-shadow: -2px -2px 0px white,
+                   4px 4px 0px rgb(227, 234, 234),
+                   7px 7px 0px rgb(18, 15, 15);
 }
